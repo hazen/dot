@@ -44,17 +44,17 @@ export CPLUS_INCLUDE_PATH=${INCLUDE}
 export LIBRARY_PATH=${LIBDIR}
 export LD_LIBRARY_PATH=${LIBDIR}
 
-if [ -d /usr/libexec/java_home ]; then
+if [ -d "/usr/libexec/java_home" ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
 fi
 #export M2_HOME=/usr/local/apache-maven-3.0.5
 export M2_HOME=/usr/local/opt/maven/libexec
 export M2=/usr/local/opt/maven/libexec/bin
 
-if [ -f ${HOME}/.bash_aliases ]; then
+if [ -f "${HOME}/.bash_aliases" ]; then
   source ${HOME}/.bash_aliases
 fi
-if [ -f ${HOME}/.bash_secrets ]; then
+if [ -f "${HOME}/.bash_secrets" ]; then
   source ${HOME}/.bash_secrets
 fi
 

@@ -22,7 +22,14 @@ alias noproxy="sudo networksetup -setautoproxystate 'Thunderbolt Ethernet' off; 
 alias mtufix="sudo ifconfig ppp0 mtu 1300; sudo dscacheutil -flushcache"
 
 # SSH
-MY_IP=`ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}'`
+if [ -n "`ifconfig | grep ^en0`" ]; then
+    # Mac
+    MY_IP=`ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}'`
+fi
+if [ -n "`ifconfig | grep ^eth0`" ]; then
+    # Debian
+    MY_IP=`ifconfig eth0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d: -f2`
+fi
 alias flush="sudo discoveryutil mdnsflushcache; sudo discoveryutil udnsflushcaches"
 alias tunnel.britannia="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D 1080 hazen@britannia.dyndns.biz -L 5901/127.0.0.1/5900"
 alias tunnel.iplayer="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D ${MY_IP}:1080 hazen@britannia.dyndns.biz -L 5901/127.0.0.1/5900"
@@ -51,7 +58,9 @@ alias colo="rsync -avz -e ssh riak-c-client hazen@r2s20:~/dev/clients/c"
 alias h="history"
 
 # Dev
-alias ldd="otool -L"
+if which otool > /dev/null; then
+    alias ldd="otool -L"
+fi
 # otool -L /usr/local/libiconv-1.13.1/lib/libiconv.2.dylib
 # lipo -info /usr/local/libiconv-1.13.1/lib/libiconv.2.dylib
 function locate {
