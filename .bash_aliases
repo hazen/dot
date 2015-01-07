@@ -39,7 +39,8 @@ alias tunnel.dad="/usr/bin/ssh -N -v -p 5191 -C -c 3des hazen@espresso.dyndns.bi
 alias tunnel.candy="/usr/bin/ssh -N -v -p 5190 -C -c 3des hazen@espresso.dyndns.biz -L 5901/127.0.0.1/5900"
 # Angie's host is Playtime
 alias tunnel.angie="/usr/bin/ssh -N -v -p 5190 -C -c 3des hazen@peewee.dyndns.biz -L 5901/127.0.0.1/5900"
-alias tunnel.home="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D 1090 hazen@javajolt.dyndns.biz -L 5901/127.0.0.1/5900"
+alias tunnel.tethys="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D 1090 hazen@javajolt.dyndns.biz -L 5901/127.0.0.1/5900"
+alias tunnel.hyperion="/usr/bin/ssh -N -v -p 5191 -C -c 3des -D 1090 hazen@javajolt.dyndns.biz -L 5901/127.0.0.1/5900"
 alias tunnel.direct="mv ~/.ssh/config ~/.ssh/config.off"
 alias tunnel.proxy="mv ~/.ssh/config.off ~/.ssh/config"
 alias reset.open="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user"
