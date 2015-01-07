@@ -1,13 +1,19 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 
-##
-# DELUXE-USR-LOCAL-BIN-INSERT
-# (do not remove this comment)
-##
-echo $PATH | grep -q -s "/usr/local/bin"
-if [ $? -eq 1 ] ; then
-    PATH=$PATH:/usr/local/bin
-    export PATH
-fi
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 export PATH=/usr/local/bin
 #export MANPATH=/usr/share/man:/usr/X11/man:/usr/X11/share/man:/usr/local/man:/opt/local/man
@@ -38,7 +44,9 @@ export CPLUS_INCLUDE_PATH=${INCLUDE}
 export LIBRARY_PATH=${LIBDIR}
 export LD_LIBRARY_PATH=${LIBDIR}
 
-export JAVA_HOME=`/usr/libexec/java_home`
+if [ -d /usr/libexec/java_home ]; then
+    export JAVA_HOME=`/usr/libexec/java_home`
+fi
 #export M2_HOME=/usr/local/apache-maven-3.0.5
 export M2_HOME=/usr/local/opt/maven/libexec
 export M2=/usr/local/opt/maven/libexec/bin
