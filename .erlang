@@ -1,0 +1,2 @@
+%% Shell hacks from Serge
+code:load_abs("/Users/hazen/bin/erlang/user_default").
