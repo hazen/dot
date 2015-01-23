@@ -67,10 +67,13 @@ fi
 function locate {
     find . -type f -exec grep -l "$1" {} \;
 }
+export S3CMD=s3cmd
+if [ -f /usr/local/Cellar/s3cmd/1.0.1/bin/s3cmd ]; then
+    export S3CMD=/usr/local/Cellar/s3cmd/1.0.1/bin/s3cmd
+fi
 function upload_mumble {
-    s3cmd put --acl-public $1 s3://share.basho/mumble/$1
-#    s3cmd put --acl-public $1 s3://mumble/$1
+    ${S3CMD} put --acl-public $1 s3://share.basho/mumble/$1
 }
 function upload_talk {
-    s3cmd put --acl-public $1 s3://share.basho/talks/$1
+    ${S3CMD} put --acl-public $1 s3://share.basho/talks/$1
 }
