@@ -66,11 +66,8 @@ export R15B01=/usr/local/erlang-R15B01
 export R15B02=/usr/local/erlang-R15B02
 export R15B03=/usr/local/erlang-R15B03
 export R16B01=/usr/local/erlang-R16B01
-export R16B02=/usr/local/erlang-R16B02-basho5
-#export R16B02=/usr/local/erlang-R16B02-patched
-#export CURRENT_OTP=/usr/local/erlang-R15B01
-export CURRENT_OTP=/usr/local/erlang-R16B02-basho5
-#export CURRENT_OTP=/usr/local/erlang-R16B02-patched
+export R16B02=/usr/local/erlang-R16B02-basho8
+export CURRENT_OTP=/usr/local/erlang-R16B02-basho8
 export ERL_LIBS=:/Users/hazen/dev/tools
 
 # pyenv

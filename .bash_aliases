@@ -1,4 +1,5 @@
 alias ll='ls -al'
+alias ls='gls --color=auto'
 alias hibernateon="sudo pmset -a hibernatemode 5"
 alias hibernateoff="sudo pmset -a hibernatemode 0"
 alias hibernatedefault="sudo pmset -a hibernatemode 3"
