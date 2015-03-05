@@ -52,10 +52,9 @@ alias tunnel.mumble="ssh -f -L 6880:basho.mumble.com:6880 javajolt.dyndns.biz -N
 alias tunnel.fastmail="ssh -f -L 20465:mail.messagingengine.com:465 javajolt.dyndns.biz -N -p5190"
 alias tunnel.gmail="ssh -f -L 30465:smtp.googlemail.com:465 javajolt.dyndns.biz -N -p5190"
 
-alias unix="ssh -p 8890 localhost"
 alias unixX="ssh -X -p 8890 localhost"
-alias home="ssh -p 5190 javajolt.dyndns.biz"
-alias minimus="ssh -p 5190 minimus.local"
+alias tethys="ssh -p 5190 javajolt.dyndns.biz"
+alias hyperion="ssh -p 5191 javajold.dyndns.biz"
 alias britannia="ssh -p 5190 britannia.dyndns.biz"
 alias startriak="for i in {1..5}; do ~/dev/riak/dev/dev\$i/bin/riak start; done"
 alias stopriak="for i in {1..5}; do ~/dev/riak/dev/dev\$i/bin/riak stop; done"
