@@ -61,6 +61,7 @@ fi
 #export RIAK_TEST_PB_PORT='10017'
 #export RIAK_TEST_HTTP_PORT='10018'
 export RT_DEST_DIR=${HOME}/dev/rt/riak
+export RT_USE_EE=Y
 export R14B04=/usr/local/erlang/R14B04.64bit
 export R15B01=/usr/local/erlang-R15B01
 export R15B02=/usr/local/erlang-R15B02
