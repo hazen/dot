@@ -63,9 +63,7 @@ fi
 export RT_DEST_DIR=${HOME}/dev/rt/riak
 export RT_USE_EE=Y
 export R14B04=/usr/local/erlang/R14B04.64bit
-export R15B01=/usr/local/erlang-R15B01
-export R15B02=/usr/local/erlang-R15B02
-export R15B03=/usr/local/erlang-R15B03
+export R15B01=/usr/local/erlang-R15B01-basho
 export R16B01=/usr/local/erlang-R16B01
 export R16B02=/usr/local/erlang-R16B02-basho8
 export CURRENT_OTP=/usr/local/erlang-R16B02-basho8
