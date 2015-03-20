@@ -54,12 +54,13 @@ alias tunnel.gmail="ssh -f -L 30465:smtp.googlemail.com:465 javajolt.dyndns.biz 
 
 alias unixX="ssh -X -p 8890 localhost"
 alias tethys="ssh -p 5190 javajolt.dyndns.biz"
-alias hyperion="ssh -p 5191 javajold.dyndns.biz"
+alias hyperion="ssh -p 5191 javajolt.dyndns.biz"
 alias britannia="ssh -p 5190 britannia.dyndns.biz"
 alias startriak="for i in {1..5}; do ~/dev/riak/dev/dev\$i/bin/riak start; done"
 alias stopriak="for i in {1..5}; do ~/dev/riak/dev/dev\$i/bin/riak stop; done"
 alias colo="rsync -avz -e ssh riak-c-client hazen@r2s20:~/dev/clients/c"
 alias h="history"
+alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
 
 # Dev
 if which otool > /dev/null; then
