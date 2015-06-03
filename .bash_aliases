@@ -35,9 +35,9 @@ if [ -n "`ifconfig | grep ^eth0`" ]; then
     MY_IP=`ifconfig eth0 | grep inet | grep -v inet6 | awk '{print $2}' | cut -d: -f2`
 fi
 alias flush="sudo discoveryutil mdnsflushcache; sudo discoveryutil udnsflushcaches"
-alias tunnel.britannia="/usr/bin/ssh -N -v -p 6190 -C -c 3des -D 1080 hazen@britannia.dyndns.biz -L 5901/127.0.0.1/5900"
+alias tunnel.britannia="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D 1080 hazen@britannia.dyndns.biz -L 5901/127.0.0.1/5900"
 alias tunnel.iplayer="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D ${MY_IP}:1080 hazen@britannia.dyndns.biz -L 5901/127.0.0.1/5900"
-alias tunnel.telly="/usr/bin/ssh -N -v -p 6199 -C -c 3des -D 1080 hazen@britannia.dyndns.biz -L 3389/127.0.0.1/3389"
+alias tunnel.telly="/usr/bin/ssh -N -v -p 5191 -C -c 3des -D 1080 hazen@britannia.dyndns.biz -L 3389/127.0.0.1/3389"
 alias tunnel.mom="/usr/bin/ssh -N -v -p 5190 -C -c 3des hazen@heimat.dyndns.biz -L 5901/127.0.0.1/5900"
 alias tunnel.dad="/usr/bin/ssh -N -v -p 5191 -C -c 3des hazen@espresso.dyndns.biz -L 5901/127.0.0.1/5900"
 alias tunnel.candy="/usr/bin/ssh -N -v -p 5190 -C -c 3des hazen@espresso.dyndns.biz -L 5901/127.0.0.1/5900"
