@@ -1,9 +1,3 @@
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
 # append to the history file, don't overwrite it
 #shopt -s histappend
 
@@ -65,8 +59,8 @@ export RT_USE_EE=Y
 export R14B04=/usr/local/erlang/R14B04.64bit
 export R15B01=/usr/local/erlang-R15B01-basho
 export R16B01=/usr/local/erlang-R16B01
-export R16B02=/usr/local/erlang-R16B02-basho8
-export CURRENT_OTP=/usr/local/erlang-R16B02-basho8
+export R16B02=/usr/local/erlang-R16B02-basho9
+export CURRENT_OTP=/usr/local/erlang-R16B02-basho9
 export ERL_LIBS=:/Users/hazen/dev/tools
 
 # pyenv
