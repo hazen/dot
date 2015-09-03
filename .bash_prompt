@@ -1,7 +1,62 @@
-function _update_ps1() {
-    PS1="$(~/bin/powerline-shell.py $? 2> /dev/null)"
-}
-
-if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+BASH_GIT_PROMPT=
+if `which brew > /dev/null` && [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+    BASH_GIT_PROMPT="$(brew --prefix bash-git-prompt)/share"
 fi
+if [ -f "${HOME}/.bash-git-prompt/gitprompt.sh" ]; then
+    BASH_GIT_PROMPT=${HOME}/.bash-git-prompt
+fi
+if [ -n "${BASH_GIT_PROMPT}" ]; then
+    GIT_PROMPT_THEME=Default
+    theuser="\$(whoami)@$(hostname)"
+    RED='\[\033[0;31m\]'
+    NORM='\[\033[0;0m\]'
+    GIT_PROMPT_END_USER=" \n${RED}${theuser}${NORM} $ "
+    source "${BASH_GIT_PROMPT}/gitprompt.sh"
+fi
+# support for xterm title
+function proml
+{
+    GRAD1='\333\262\261\260' 
+    GRAD2='\260\261\262\333'
+    YLOBRN='\[\033[01;33;43m\]'
+    WHTBRN='\[\033[01;37;43m\]'
+    REDBRN='\[\033[00;31;43m\]'
+    REDBLK='\[\033[00;31;40m\]'
+    PPLBLK='\[\033[01;35;40m\]'
+    WHTBLK='\[\033[01;37;40m\]'
+    NONE='\[\033[00m\]'
+    HBLK='\[\033[00;30;30m\]'
+    HBLU='\[\033[01;34;34m\]'
+    BLU='\[\033[00;34;34m\]'
+    YEL='\[\033[00;33;33m\]'
+    YELBLD='\[\033[01;33;33m\]'
+    WHT='\[\033[01;37;37m\]'
+    PRPL='\[\033[00;34;35m\]'
+    REDBLD='\[\033[01;31;31m\]'
+    RED='\[\033[00;31;31m\]'
+    NORM='\[\033[01;00;0m\]'
+    LTGRNBLD='\[\033[01;32m\]'
+    LTGRN='\[\033[00;32m\]'
+    LTBLU='\[\033[00;36m\]'
+    LTBLUBLD='\[\033[01;36m\]'
+    
+    export GRAD1 GRAD2 YLOBRN WHTBRN REDBRN REDBLK PPLBLK WHTBLK NONE HBLK HBLU BLU YEL WHT PRPL RED NORM LTGRN LTBLU
+    
+    case $TERM in
+        xterm*)
+            local TITLEBAR='\[\e]0;\t \u@\h:\w\007\]'
+            ;;
+        *)
+            local TITLEBAR=''
+            ;;
+    esac
+
+    export PS1="$RED\h$LTBLU:$LTGRN\w$LTBLU>$NONE "
+#    export PS1="${TITLEBAR}$LTBLU\d: $LTGRN\w\n$RED[$YEL\u$RED@$LTBLU\h$RED] $LTGRN\#:\!>$NONE "
+
+    PS2='> '
+    PS4='+ '
+}
+proml
+unset proml
+
