@@ -72,10 +72,10 @@ function locate {
     find . -type f -exec grep -l "$1" {} \;
 }
 function sync-hyperion {
-    rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$1/$2" "hyperion.local:$1"
+    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$1/$2" "hyperion.local:$1"
 }
 function sync-satyr {
-    rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$1/$2" "satyr.local:$1"
+    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$1/$2" "satyr.local:$1"
 }
 export S3CMD=s3cmd
 if [ -f /usr/local/Cellar/s3cmd/1.0.1/bin/s3cmd ]; then
