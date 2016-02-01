@@ -38,7 +38,8 @@ alias flush="sudo discoveryutil mdnsflushcache; sudo discoveryutil udnsflushcach
 alias tunnel.britannia="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D 1080 hazen@britannia.dyndns.biz -L 5901:127.0.0.1:5900"
 alias tunnel.iplayer="/usr/bin/ssh -N -v -p 5190 -C -c 3des -D ${MY_IP}:1080 hazen@britannia.dyndns.biz -L 5901:127.0.0.1:5900"
 alias tunnel.telly="/usr/bin/ssh -N -v -p 5191 -C -c 3des -D 1080 hazen@britannia.dyndns.biz -L 3389:127.0.0.1:3389"
-alias tunnel.mom="/usr/bin/ssh -N -v -p 5190 -C -c 3des hazen@heimat.dyndns.biz -L 5901:127.0.0.1:5900"
+alias tunnel.mom="/usr/bin/ssh -N -v -p 5190 -C hazen@heimat.dyndns.biz -L 5901:127.0.0.1:5900"
+alias tunnel.mom2="/usr/bin/ssh -N -v -p 5190 -C hazen@heimat.dyndns.biz -L 5901:127.0.0.1:5900"
 alias tunnel.dad="/usr/bin/ssh -N -v -p 5191 -C -c 3des hazen@espresso.dyndns.biz -L 5901:127.0.0.1:5900"
 alias tunnel.candy="/usr/bin/ssh -N -v -p 5190 -C -c 3des hazen@espresso.dyndns.biz -L 5901:127.0.0.1:5900"
 # Angie's host is Playtime
