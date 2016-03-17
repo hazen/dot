@@ -39,7 +39,7 @@ alias tunnel.britannia="/usr/bin/ssh -N -v -p 5190 -C -D 1080 hazen@britannia.dy
 alias tunnel.iplayer="/usr/bin/ssh -N -v -p 5190 -C -D ${MY_IP}:1080 hazen@britannia.dyndns.biz -L 5901:127.0.0.1:5900"
 alias tunnel.telly="/usr/bin/ssh -N -v -p 5191 -C -D 1080 hazen@britannia.dyndns.biz -L 3389:127.0.0.1:3389"
 alias tunnel.mom="/usr/bin/ssh -N -v -p 5190 -C hazen@heimat.dyndns.biz -L 5901:127.0.0.1:5900"
-alias tunnel.mom2="/usr/bin/ssh -N -v -p 5190 -C hazen@heimat.dyndns.biz -L 5901:127.0.0.1:5900"
+alias tunnel.mom2="/usr/bin/ssh -N -v -p 5191 -C hazen@heimat.dyndns.biz -L 5901:127.0.0.1:5900"
 alias tunnel.dad="/usr/bin/ssh -N -v -p 5191 -C hazen@espresso.dyndns.biz -L 5901:127.0.0.1:5900"
 alias tunnel.candy="/usr/bin/ssh -N -v -p 5190 -C hazen@espresso.dyndns.biz -L 5901:127.0.0.1:5900"
 # Angie's host is Playtime
@@ -62,6 +62,7 @@ alias stopriak="for i in {1..5}; do ~/dev/riak/dev/dev\$i/bin/riak stop; done"
 alias colo="rsync -avz -e ssh riak-c-client hazen@r2s20:~/dev/clients/c"
 alias h="history"
 alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
+alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
 
 # Dev
 if which otool > /dev/null; then
