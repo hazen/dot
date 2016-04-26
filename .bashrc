@@ -18,7 +18,7 @@ export LIBDIR=${HOME}/lib
 export PKG_CONFIG_PATH=
 export EDITOR=vim
 
-local="erln8 popt-1.16 cygutils-1.4.10 libevent-2.0.21 libuv-v0.11.22 opt/readline opt/openssl protobuf-2.5.0"
+local="erln8 libuv-v0.11.22 opt/readline opt/openssl"
 #local="erlang-R15B03 popt-1.16 cygutils-1.4.10 protobuf-2.5.0 protobuf-c-0.15 libevent-2.0.21"
 #local="erlang-R16B02-basho3 popt-1.16 cygutils-1.4.10 protobuf-2.4.1 protobuf-c-0.15 libevent-2.0.21 zlog-1.2.12"
 for item in $local; do
@@ -60,9 +60,10 @@ export RT_USE_EE=Y
 export R14B04=/usr/local/erlang/R14B04.64bit
 export R15B01=/usr/local/erlang-R15B01-basho1
 export R16B01=/usr/local/erlang-R16B01
-export R16B02=/usr/local/erlang-R16B02-basho9
-export CURRENT_OTP=/usr/local/erlang-R16B02-basho9
+export R16B02=/usr/local/erlang-R16B02-basho10
+export CURRENT_OTP=/usr/local/erlang-R16B02-basho10
 export ERL_LIBS=:/Users/hazen/dev/tools
+export HOMEBREW_NO_ANALYTICS=1
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"

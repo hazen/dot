@@ -63,7 +63,6 @@ alias colo="rsync -avz -e ssh riak-c-client hazen@r2s20:~/dev/clients/c"
 alias h="history"
 alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
 alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
-alias make_list="rm list; echo -n "time ./riak_test -c rtdev " > list ; ls -1 tests/ts_* tests/riak_shell* | cut -d/ -f2 | cut -d. -f1 | awk '{print "-t",$1;}' | sed ':a;N;$!ba;s/\n/ /g' >> list; chmod 755 list"
 
 # Dev
 if which otool > /dev/null; then
