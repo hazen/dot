@@ -18,9 +18,7 @@ export LIBDIR=${HOME}/lib
 export PKG_CONFIG_PATH=
 export EDITOR=vim
 
-local="erln8 libuv-v0.11.22 opt/readline opt/openssl"
-#local="erlang-R15B03 popt-1.16 cygutils-1.4.10 protobuf-2.5.0 protobuf-c-0.15 libevent-2.0.21"
-#local="erlang-R16B02-basho3 popt-1.16 cygutils-1.4.10 protobuf-2.4.1 protobuf-c-0.15 libevent-2.0.21 zlog-1.2.12"
+local="erln8 opt/readline opt/openssl opt/zlib opt/libffi"
 for item in $local; do
     export PATH=${PATH}:/usr/local/$item/bin
     #export MANPATH=${MANPATH}:/usr/local/$item/share/man
@@ -53,6 +51,7 @@ if [ -f "${HOME}/.bash_secrets" ]; then
   source ${HOME}/.bash_secrets
 fi
 
+. /usr/local/erlang-R16B02-basho10/activate
 #export RIAK_TEST_PB_PORT='10017'
 #export RIAK_TEST_HTTP_PORT='10018'
 export RT_DEST_DIR=${HOME}/dev/rt/riak
@@ -69,7 +68,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Ruby
 # place in ~/.bash_profile as the very last line
