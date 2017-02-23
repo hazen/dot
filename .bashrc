@@ -18,7 +18,7 @@ export LIBDIR=${HOME}/lib
 export PKG_CONFIG_PATH=
 export EDITOR=vim
 
-local="erln8 opt/readline opt/openssl opt/zlib opt/libffi"
+local="opt/readline opt/openssl opt/zlib opt/libffi opt/ansible@2.0"
 for item in $local; do
     export PATH=${PATH}:/usr/local/$item/bin
     #export MANPATH=${MANPATH}:/usr/local/$item/share/man
