@@ -64,6 +64,10 @@ alias h="history"
 alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
 alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
 
+# Elixir
+alias iex="ERL_PATH=/usr/local/bin/erl iex"
+alias elixir="ERL_PATH=/usr/local/bin/erl elixir"
+
 # Dev
 if which otool > /dev/null; then
     alias ldd="otool -L"
