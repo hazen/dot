@@ -67,6 +67,7 @@ alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
 # Elixir
 alias iex="ERL_PATH=/usr/local/bin/erl iex"
 alias elixir="ERL_PATH=/usr/local/bin/erl elixir"
+alias mix="ERL_PATH=/usr/local/bin/erl mix"
 
 # Dev
 if which otool > /dev/null; then
