@@ -51,16 +51,6 @@ if [ -f "${HOME}/.bash_secrets" ]; then
   source ${HOME}/.bash_secrets
 fi
 
-. /usr/local/erlang-R16B02-basho10/activate
-#export RIAK_TEST_PB_PORT='10017'
-#export RIAK_TEST_HTTP_PORT='10018'
-export RT_DEST_DIR=${HOME}/dev/rt/riak
-export RT_USE_EE=Y
-export R14B04=/usr/local/erlang/R14B04.64bit
-export R15B01=/usr/local/erlang-R15B01-basho1
-export R16B01=/usr/local/erlang-R16B01
-export R16B02=/usr/local/erlang-R16B02-basho10
-export CURRENT_OTP=/usr/local/erlang-R16B02-basho10
 export ERL_LIBS=:/Users/hazen/dev/tools
 export HOMEBREW_NO_ANALYTICS=1
 
