@@ -49,7 +49,6 @@ alias tunnel.hyperion="/usr/bin/ssh -N -v -p 5191 -C -D 1090 hazen@javajolt.dynd
 alias tunnel.direct="mv ~/.ssh/config ~/.ssh/config.off"
 alias tunnel.proxy="mv ~/.ssh/config.off ~/.ssh/config"
 alias reset.open="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user"
-alias tunnel.mumble="ssh -f -L 6880:basho.mumble.com:6880 javajolt.dyndns.biz -N -p5190"
 alias tunnel.fastmail="ssh -f -L 20465:mail.messagingengine.com:465 javajolt.dyndns.biz -N -p5190"
 alias tunnel.gmail="ssh -f -L 30465:smtp.googlemail.com:465 javajolt.dyndns.biz -N -p5190"
 
@@ -62,11 +61,7 @@ alias sftp_britannia="sftp -oPort=5190 britannia.dyndns.biz"
 alias h="history"
 alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
 alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
-
-# Elixir
-alias iex="ERL_PATH=/usr/local/bin/erl iex"
-alias elixir="ERL_PATH=/usr/local/bin/erl elixir"
-alias mix="ERL_PATH=/usr/local/bin/erl mix"
+alias safe_reboot="sudo fdesetup authrestart -delayminutes -1"
 
 # Dev
 if which otool > /dev/null; then
@@ -82,14 +77,4 @@ function sync-hyperion {
 }
 function sync-satyr {
     rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "satyr.local:$PWD"
-}
-export S3CMD=s3cmd
-if [ -f /usr/local/Cellar/s3cmd/1.0.1/bin/s3cmd ]; then
-    export S3CMD=/usr/local/Cellar/s3cmd/1.0.1/bin/s3cmd
-fi
-function upload_mumble {
-    ${S3CMD} put --acl-public $1 s3://share.basho/mumble/$1
-}
-function upload_talk {
-    ${S3CMD} put --acl-public $1 s3://share.basho/talks/$1
 }
