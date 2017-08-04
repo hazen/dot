@@ -75,6 +75,6 @@ function locate {
 function sync-hyperion {
     rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "hyperion.local:$PWD"
 }
-function sync-satyr {
-    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "satyr.local:$PWD"
+function sync-crius {
+    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "crius.local:$PWD"
 }
