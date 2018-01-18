@@ -40,7 +40,6 @@ export LD_LIBRARY_PATH=${LIBDIR}
 if [ -d "/usr/libexec/java_home" ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
 fi
-#export M2_HOME=/usr/local/apache-maven-3.0.5
 export M2_HOME=/usr/local/opt/maven/libexec
 export M2=/usr/local/opt/maven/libexec/bin
 
@@ -54,19 +53,8 @@ fi
 export ERL_LIBS=:/Users/hazen/dev/tools
 export HOMEBREW_NO_ANALYTICS=1
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# Node.JS nvm
-if [ -f /usr/local/opt/nvm/nvm.sh ]; then
-  export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+# asdf Version Manager
+if [ -d "${HOME}/.asdf" ]; then
+  . "${HOME}/.asdf/asdf.sh"
+  . "${HOME}/.asdf/completions/asdf.bash"
 fi
-
-# Ruby
-# place in ~/.bash_profile as the very last line
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
