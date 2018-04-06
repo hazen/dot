@@ -18,7 +18,7 @@ export LIBDIR=${HOME}/lib
 export PKG_CONFIG_PATH=
 export EDITOR=vim
 
-local="opt/readline opt/openssl opt/zlib opt/libffi opt/ansible@2.0"
+local="opt/readline opt/openssl opt/zlib opt/libffi"
 for item in $local; do
     export PATH=${PATH}:/usr/local/$item/bin
     #export MANPATH=${MANPATH}:/usr/local/$item/share/man
@@ -52,6 +52,7 @@ fi
 
 export ERL_LIBS=:/Users/hazen/dev/tools
 export HOMEBREW_NO_ANALYTICS=1
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # asdf Version Manager
 if [ -d "${HOME}/.asdf" ]; then
