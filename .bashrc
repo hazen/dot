@@ -63,3 +63,8 @@ if [ -f '/Users/hazen/google-cloud-sdk/completion.bash.inc' ]; then source '/Use
 if [ -f '/usr/local/bin/kubectl' ]; then
   source <(kubectl completion bash)
 fi
+
+# Bash command-line completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
