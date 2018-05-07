@@ -64,7 +64,7 @@ if [ -f '/usr/local/bin/kubectl' ]; then
   source <(kubectl completion bash)
 fi
 
-# Bash command-line completion
+# Bash command-line completion (needs gsed to be called sed)
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
