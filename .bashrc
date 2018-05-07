@@ -10,32 +10,27 @@
 shopt -s checkwinsize
 
 export PATH=
-#export MANPATH=/usr/share/man:/usr/X11/man:/usr/X11/share/man:/usr/local/man:/opt/local/man
 export INCLUDE=${HOME}/include
 export LIBDIR=${HOME}/lib
-#export DYLD_LIBRARY_PATH=/usr/local/lib:/opt/local/lib:/usr/lib:/usr/X11/lib
-#export DYLD_LIBRARY_PATH=
 export PKG_CONFIG_PATH=
 export EDITOR=vim
 
 local="opt/readline opt/openssl opt/zlib opt/libffi"
 for item in $local; do
     export PATH=${PATH}:/usr/local/$item/bin
-    #export MANPATH=${MANPATH}:/usr/local/$item/share/man
     export INCLUDE=${INCLUDE}:/usr/local/$item/include
     export LIBDIR=${LIBDIR}:/usr/local/$item/lib
     export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/$item/lib/pkgconfig
-#    export DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}:/usr/local/$item/lib
 done
 export PATH=${PATH}:/usr/local/bin
 export INCLUDE=${INCLUDE}:/usr/local/include:/usr/include
 export PATH=${PATH}:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
 export LIBDIR=${LIBDIR}:/usr/local/lib:/usr/lib
 # Used by gcc
-export CPATH=${INCLUDE}
-export CPLUS_INCLUDE_PATH=${INCLUDE}
-export LIBRARY_PATH=${LIBDIR}
-export LD_LIBRARY_PATH=${LIBDIR}
+#export CPATH=${INCLUDE}
+#export CPLUS_INCLUDE_PATH=${INCLUDE}
+#export LIBRARY_PATH=${LIBDIR}
+#export LD_LIBRARY_PATH=${LIBDIR}
 
 if [ -d "/usr/libexec/java_home" ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
