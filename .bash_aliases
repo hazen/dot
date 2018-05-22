@@ -56,6 +56,8 @@ alias sftp_britannia="sftp -oPort=5190 britannia.dyndns.biz"
 alias h="history"
 alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
 alias g="git"
+alias d="docker"
+alias dc="docker-compose"
 alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
 alias safe_reboot="sudo fdesetup authrestart -delayminutes -1"
 
