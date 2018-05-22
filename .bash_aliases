@@ -20,11 +20,6 @@ alias ShowDesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 alias SoAnnoying="launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
 alias BugMeAgain="launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist"
 
-# Thomson Reuters
-alias authoxy="sudo networksetup -setwebproxy 'Thunderbolt Ethernet' 127.0.0.1 8080; sudo networksetup -setsecurewebproxy 'Thunderbolt Ethernet' 127.0.0.1 8080; sudo networksetup -setwebproxy Wi-Fi 127.0.0.1 8080; sudo networksetup -setsecurewebproxy Wi-Fi 127.0.0.1 8080"
-alias noproxy="sudo networksetup -setautoproxystate 'Thunderbolt Ethernet' off; sudo networksetup -setautoproxystate Wi-Fi off; sudo networksetup -setwebproxystate 'Thunderbolt Ethernet' off; sudo networksetup -setsecurewebproxystate 'Thunderbolt Ethernet' off; sudo networksetup -setwebproxystate Wi-Fi off; sudo networksetup -setsecurewebproxystate Wi-Fi off"
-alias mtufix="sudo ifconfig ppp0 mtu 1300; sudo dscacheutil -flushcache"
-
 # SSH
 if [ -n "`ifconfig | grep ^en0`" ]; then
     # Mac
@@ -60,6 +55,7 @@ alias britannia="ssh -p 5190 britannia.dyndns.biz"
 alias sftp_britannia="sftp -oPort=5190 britannia.dyndns.biz"
 alias h="history"
 alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
+alias g="git"
 alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
 alias safe_reboot="sudo fdesetup authrestart -delayminutes -1"
 
@@ -75,6 +71,6 @@ function locate {
 function sync-hyperion {
     rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "hyperion.local:$PWD"
 }
-function sync-crius {
-    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "crius.local:$PWD"
+function sync-calypso {
+    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "calypso.local:$PWD"
 }

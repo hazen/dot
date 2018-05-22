@@ -1,6 +1,6 @@
 [user]
 	name = Brett Hazen
-	email = brett@basho.com
+	email = github@javajolt.com
 [color]
 	status = auto
 	branch = auto
@@ -9,11 +9,29 @@
 	ui = auto
 [core]
 	excludesfile = /Users/hazen/.gitignore_global
+[push]
+	default = simple
+[diff]
+    tool = opendiff
+[difftool]
+    prompt = false
+[difftool "opendiff"]
+    cmd = /usr/bin/opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\"
+#[diff]
+#	#external = /Users/hazen/bin/git-diff-cmd.sh
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[push]
-	default = simple
+[gpg]
+	program = gpg1
+[alias]
+	co = checkout
+	b = branch
+	ci = commit
+	st = status
+	pl = pull
+	ps = push
+	m = merge
