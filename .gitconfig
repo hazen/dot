@@ -36,3 +36,5 @@
 	ps = push
 	m = merge
 	rb = rebase
+	c = clone
+	a = add
