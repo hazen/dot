@@ -32,8 +32,8 @@
 	b = branch
 	ci = commit
 	st = status
-	pl = pull
-	ps = push
+	l = pull
+	p = push
 	m = merge
 	rb = rebase
 	c = clone
