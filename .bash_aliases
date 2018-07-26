@@ -76,3 +76,6 @@ function sync-hyperion {
 function sync-calypso {
     rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "calypso.local:$PWD"
 }
+function image-clean {
+   docker rmi `docker images | grep "$1" | awk '{print $3;}'`
+}

@@ -49,6 +49,8 @@ export ERL_LIBS=:/Users/hazen/dev/tools
 export HOMEBREW_NO_ANALYTICS=1
 export ERL_AFLAGS="-kernel shell_history enabled"
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # asdf Version Manager
 if [ -d "${HOME}/.asdf" ]; then
