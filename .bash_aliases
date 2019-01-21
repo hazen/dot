@@ -48,7 +48,7 @@ alias tunnel.gmail="ssh -f -L 30465:smtp.googlemail.com:465 javajolt.dyndns.biz 
 alias tunnel.reverse="ssh -R 19999:localhost:22 -p5190 javajolt.dyndns.biz"
 
 alias unixX="ssh -X -p 8890 localhost"
-alias tethys="ssh -p 5190 javajolt.dyndns.biz"
+alias eurybia="ssh -p 5190 javajolt.dyndns.biz"
 alias scylla="ssh -p 5191 javajolt.dyndns.biz"
 alias sftp_tethys="sftp -oPort=5190 javajolt.dyndns.biz"
 alias sftp_hyperion="sftp -oPort=5191 javajolt.dyndns.biz"
