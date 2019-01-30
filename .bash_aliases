@@ -50,7 +50,7 @@ alias tunnel.reverse="ssh -R 19999:localhost:22 -p5190 javajolt.dyndns.biz"
 alias unixX="ssh -X -p 8890 localhost"
 alias eurybia="ssh -p 5190 javajolt.dyndns.biz"
 alias scylla="ssh -p 5191 javajolt.dyndns.biz"
-alias sftp_tethys="sftp -oPort=5190 javajolt.dyndns.biz"
+alias sftp_eurybia="sftp -oPort=5190 javajolt.dyndns.biz"
 alias sftp_hyperion="sftp -oPort=5191 javajolt.dyndns.biz"
 alias britannia="ssh -p 5190 britannia.dyndns.biz"
 alias sftp_britannia="sftp -oPort=5190 britannia.dyndns.biz"
@@ -59,6 +59,7 @@ alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
 alias g="git"
 alias d="docker"
 alias dc="docker-compose"
+alias pg"PGPASSWORD=postgres psql -U postgres -h localhost -d gigsmart_dev"
 alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
 alias safe_reboot="sudo fdesetup authrestart -delayminutes -1"
 
@@ -71,11 +72,11 @@ fi
 function locate {
     find . -type f -exec grep -l "$1" {} \;
 }
-function sync-hyperion {
-    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "hyperion.local:$PWD"
+function sync-scylla {
+    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "scylla.local:$PWD"
 }
-function sync-calypso {
-    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "calypso.local:$PWD"
+function sync-themis {
+    rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress "$PWD/$1" "themis.local:$PWD"
 }
 function image-clean {
    docker rmi `docker images | grep "$1" | awk '{print $3;}'`
