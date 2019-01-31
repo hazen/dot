@@ -59,7 +59,7 @@ alias git-scoreboard="git log | grep '^Author' | sort | uniq -ci | sort -r"
 alias g="git"
 alias d="docker"
 alias dc="docker-compose"
-alias pg"PGPASSWORD=postgres psql -U postgres -h localhost -d gigsmart_dev"
+alias pg="PGPASSWORD=postgres psql -U postgres -h localhost -d gigsmart_dev"
 alias virtualbox="export VAGRANT_DEFAULT_PROVIDER=virtualbox"
 alias safe_reboot="sudo fdesetup authrestart -delayminutes -1"
 
