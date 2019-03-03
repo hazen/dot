@@ -1,1 +1,2 @@
-PROMPT='%B%m %~%b$(git_super_status) %# '
+NEWLINE=$'\n'
+PROMPT='$(git_super_status)${NEWLINE}%B%m %~%b %# '
