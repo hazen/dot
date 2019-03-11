@@ -110,7 +110,7 @@ export PKG_CONFIG_PATH=
 export EDITOR=vim
 
 local="opt/readline opt/openssl opt/zlib opt/libffi"
-for item in $local; do
+for item in $(echo $local); do
     export PATH=${PATH}:/usr/local/$item/bin
     export INCLUDE=${INCLUDE}:/usr/local/$item/include
     export LIBDIR=${LIBDIR}:/usr/local/$item/lib
