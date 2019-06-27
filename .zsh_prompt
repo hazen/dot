@@ -1,2 +1,2 @@
 NEWLINE=$'\n'
-PROMPT='$(git_super_status)${NEWLINE}%{%F{red}%}%B%m %{%F{blue}%}%~%b%{%f%}%  %# '
+PROMPT='$(git_super_status)${NEWLINE}%{%F{red}%}%m %{%F{blue}%}%~%{%f%}%  %# '
