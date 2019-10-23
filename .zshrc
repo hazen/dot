@@ -109,6 +109,7 @@ export INCLUDE=${HOME}/include
 export LIBDIR=${HOME}/lib
 export PKG_CONFIG_PATH=
 export EDITOR=vim
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 local="opt/readline opt/openssl opt/zlib opt/libffi"
 for item in $(echo $local); do
