@@ -152,3 +152,6 @@ if [ -f '/usr/local/bin/kubectl' ]; then
   source <(kubectl completion zsh)
 fi
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
