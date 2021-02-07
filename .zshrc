@@ -111,7 +111,7 @@ export PKG_CONFIG_PATH=
 export EDITOR=vim
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-local="opt/readline opt/openssl opt/zlib opt/libffi"
+local="opt/readline opt/openssl opt/zlib opt/libffi opt/libsodium"
 for item in $(echo $local); do
     export PATH=${PATH}:/usr/local/$item/bin
     export INCLUDE=${INCLUDE}:/usr/local/$item/include
@@ -122,10 +122,6 @@ export PATH=${PATH}:/usr/local/bin
 export INCLUDE=${INCLUDE}:/usr/local/include:/usr/include
 export PATH=${PATH}:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
 export LIBDIR=${LIBDIR}:/usr/local/lib:/usr/lib
-
-export ANDROID_HOME=/usr/local/share/android-sdk
-export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 if [ -f "$HOME/.zsh_aliases" ]; then
   source "$HOME/.zsh_aliases"
@@ -144,6 +140,7 @@ fi
 
 # asdf Version Manager
 if [ -d "${HOME}/.asdf" ]; then
+  export KERL_BUILD_DOCS="yes"
   . "${HOME}/.asdf/asdf.sh"
   . "${HOME}/.asdf/completions/asdf.bash"
 fi
