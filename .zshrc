@@ -154,5 +154,5 @@ if [ -f '${HOMEBREW_ROOT}/bin/kubectl' ]; then
 fi
 
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=${HOMEBREW_ROOT}/share/zsh/site-functions:$FPATH
 fi
