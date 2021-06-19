@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:${HOMEBREW_ROOT}/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/hazen/.oh-my-zsh"
@@ -68,7 +68,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="${HOMEBREW_ROOT}/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -110,18 +110,22 @@ export LIBDIR=${HOME}/lib
 export PKG_CONFIG_PATH=
 export EDITOR=vim
 export ERL_AFLAGS="-kernel shell_history enabled"
+export HOMEBREW_ROOT="/usr/local"
+if [ "$(/usr/bin/uname -p)" = "arm" ]; then
+  export HOMEBREW_ROOT="/opt/homebrew"
+fi
 
 local="opt/readline opt/openssl opt/zlib opt/libffi opt/libsodium"
 for item in $(echo $local); do
-    export PATH=${PATH}:/usr/local/$item/bin
-    export INCLUDE=${INCLUDE}:/usr/local/$item/include
-    export LIBDIR=${LIBDIR}:/usr/local/$item/lib
-    export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/$item/lib/pkgconfig
+    export PATH=${PATH}:${HOMEBREW_ROOT}/$item/bin
+    export INCLUDE=${INCLUDE}:${HOMEBREW_ROOT}/$item/include
+    export LIBDIR=${LIBDIR}:${HOMEBREW_ROOT}/$item/lib
+    export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${HOMEBREW_ROOT}/$item/lib/pkgconfig
 done
-export PATH=${PATH}:/usr/local/bin
-export INCLUDE=${INCLUDE}:/usr/local/include:/usr/include
+export PATH=${PATH}:${HOMEBREW_ROOT}/bin
+export INCLUDE=${INCLUDE}:${HOMEBREW_ROOT}/include:/usr/include
 export PATH=${PATH}:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
-export LIBDIR=${LIBDIR}:/usr/local/lib:/usr/lib
+export LIBDIR=${LIBDIR}:${HOMEBREW_ROOT}/lib:/usr/lib
 
 if [ -f "$HOME/.zsh_aliases" ]; then
   source "$HOME/.zsh_aliases"
@@ -130,8 +134,8 @@ if [ -f "${HOME}/.zsh_secrets" ]; then
   source ${HOME}/.zsh_secrets
 fi
 
-if [ -f "/usr/local/opt/zsh-git-prompt/zshrc.sh" ]; then
-  source "/usr/local/opt/zsh-git-prompt/zshrc.sh"
+if [ -f "${HOMEBREW_ROOT}/opt/zsh-git-prompt/zshrc.sh" ]; then
+  source "${HOMEBREW_ROOT}/opt/zsh-git-prompt/zshrc.sh"
 fi
 
 if [ -f "$HOME/.zsh_prompt" ]; then
@@ -145,7 +149,7 @@ if [ -d "${HOME}/.asdf" ]; then
   . "${HOME}/.asdf/completions/asdf.bash"
 fi
 
-if [ -f '/usr/local/bin/kubectl' ]; then
+if [ -f '${HOMEBREW_ROOT}/bin/kubectl' ]; then
   source <(kubectl completion zsh)
 fi
 
