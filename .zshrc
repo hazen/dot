@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch arm64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
@@ -113,6 +113,9 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export HOMEBREW_ROOT="/usr/local"
 if [ "$(/usr/bin/uname -p)" = "arm" ]; then
   export HOMEBREW_ROOT="/opt/homebrew"
+  export CFLAGS="-O2 -g -arch arm64"
+  export CXXFLAGS="-arch arm64"
+  export LDFLAGS="-arch arm64"
 fi
 
 local="opt/readline opt/openssl opt/zlib opt/libffi opt/libsodium"
@@ -124,8 +127,10 @@ for item in $(echo $local); do
 done
 export PATH=${PATH}:${HOMEBREW_ROOT}/bin
 export INCLUDE=${INCLUDE}:${HOMEBREW_ROOT}/include:/usr/include
-export PATH=${PATH}:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin
+export CPATH=${INCLUDE}:${HOMEBREW_ROOT}/include:/usr/include
+export PATH=${PATH}:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/bin
 export LIBDIR=${LIBDIR}:${HOMEBREW_ROOT}/lib:/usr/lib
+export LIBRARY_PATH=${LIBDIR}:${HOMEBREW_ROOT}/lib:/usr/lib
 
 if [ -f "$HOME/.zsh_aliases" ]; then
   source "$HOME/.zsh_aliases"
@@ -156,3 +161,4 @@ fi
 if type brew &>/dev/null; then
   FPATH=${HOMEBREW_ROOT}/share/zsh/site-functions:$FPATH
 fi
+export KERL_CONFIGURE_OPTIONS="--disable-hipe --with-wx-config=$(brew --prefix wxwidgets)/bin/wx-config --with-odbc=$(brew --prefix unixodbc)"
