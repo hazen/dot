@@ -118,7 +118,7 @@ if [ "$(/usr/bin/uname -p)" = "arm" ]; then
   export LDFLAGS="-arch arm64"
 fi
 
-local="opt/readline opt/openssl opt/zlib opt/libffi opt/libsodium"
+local="opt/readline opt/openssl opt/libsodium"
 for item in $(echo $local); do
     export PATH=${PATH}:${HOMEBREW_ROOT}/$item/bin
     export INCLUDE=${INCLUDE}:${HOMEBREW_ROOT}/$item/include
