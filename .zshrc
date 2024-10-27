@@ -105,8 +105,8 @@ compinit
 # End of lines added by compinstall
 
 export PATH=
-export INCLUDE=${HOME}/include
-export LIBDIR=${HOME}/lib
+#export INCLUDE=${HOME}/include
+#export LIBDIR=${HOME}/lib
 export PKG_CONFIG_PATH=
 export EDITOR=vim
 export ERL_AFLAGS="-kernel shell_history enabled"
@@ -118,13 +118,13 @@ if [ "$(/usr/bin/uname -p)" = "arm" ]; then
   export LDFLAGS="-arch arm64"
 fi
 
-local="opt/readline opt/openssl opt/libsodium"
-for item in $(echo $local); do
-    export PATH=${PATH}:${HOMEBREW_ROOT}/$item/bin
-    export INCLUDE=${INCLUDE}:${HOMEBREW_ROOT}/$item/include
-    export LIBDIR=${LIBDIR}:${HOMEBREW_ROOT}/$item/lib
-    export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${HOMEBREW_ROOT}/$item/lib/pkgconfig
-done
+#local="opt/readline opt/openssl opt/libsodium"
+#for item in $(echo $local); do
+#    export PATH=${PATH}:${HOMEBREW_ROOT}/$item/bin
+#    export INCLUDE=${INCLUDE}:${HOMEBREW_ROOT}/$item/include
+#    export LIBDIR=${LIBDIR}:${HOMEBREW_ROOT}/$item/lib
+#    export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${HOMEBREW_ROOT}/$item/lib/pkgconfig
+#done
 export PATH=${PATH}:${HOMEBREW_ROOT}/bin
 export INCLUDE=${INCLUDE}:${HOMEBREW_ROOT}/include:/usr/include
 export CPATH=${INCLUDE}:${HOMEBREW_ROOT}/include:/usr/include
@@ -148,11 +148,8 @@ if [ -f "$HOME/.zsh_prompt" ]; then
 fi
 
 # asdf Version Manager
-if [ -d "${HOME}/.asdf" ]; then
-  export KERL_BUILD_DOCS="yes"
-  . "${HOME}/.asdf/asdf.sh"
-  . "${HOME}/.asdf/completions/asdf.bash"
-fi
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
+export PATH="/opt/homebrew/opt/postgresql@16/bin":$PATH
 
 if [ -f '${HOMEBREW_ROOT}/bin/kubectl' ]; then
   source <(kubectl completion zsh)
