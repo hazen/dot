@@ -150,6 +150,7 @@ fi
 # asdf Version Manager
 source /opt/homebrew/opt/asdf/libexec/asdf.sh
 export PATH="/opt/homebrew/opt/postgresql@16/bin":$PATH
+export PATH="/opt/homebrew/opt/pnpm@8/bin:$PATH"
 
 if [ -f '${HOMEBREW_ROOT}/bin/kubectl' ]; then
   source <(kubectl completion zsh)
