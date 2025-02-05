@@ -148,7 +148,8 @@ if [ -f "$HOME/.zsh_prompt" ]; then
 fi
 
 # asdf Version Manager
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin":$PATH
 export PATH="/opt/homebrew/opt/pnpm@8/bin:$PATH"
 
