@@ -150,7 +150,7 @@ fi
 # asdf Version Manager
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@16/bin":$PATH
+export PATH="/opt/homebrew/opt/postgresql@17/bin":$PATH
 export PATH="/opt/homebrew/opt/pnpm@8/bin:$PATH"
 
 if [ -f '${HOMEBREW_ROOT}/bin/kubectl' ]; then
