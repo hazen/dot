@@ -132,6 +132,14 @@ export PATH=${PATH}:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/bin
 export LIBDIR=${LIBDIR}:${HOMEBREW_ROOT}/lib:/usr/lib
 export LIBRARY_PATH=${LIBDIR}:${HOMEBREW_ROOT}/lib:/usr/lib
 
+# Digital Onboarding for PostgreSQL
+export PATH="/opt/homebrew/opt/icu4c@77/bin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c@77/sbin:$PATH"
+export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/icu4c@77/lib"
+export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/icu4c@77/include"
+export PKG_CONFIG_PATH="/opt/homebrew/Cellar/icu4c@77/77.1/lib/pkgconfig/:$PKG_CONFIG_PATH"
+export MACOSX_DEPLOYMENT_TARGET="$(sw_vers -productVersion)"
+
 if [ -f "$HOME/.zsh_aliases" ]; then
   source "$HOME/.zsh_aliases"
 fi
@@ -148,10 +156,9 @@ if [ -f "$HOME/.zsh_prompt" ]; then
 fi
 
 # asdf Version Manager
-export ASDF_DATA_DIR="$HOME/.asdf"
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@17/bin":$PATH
-export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
+#export ASDF_DATA_DIR="$HOME/.asdf"
+#export PATH="$ASDF_DATA_DIR/shims:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@16/bin":$PATH
 
 if [ -f '${HOMEBREW_ROOT}/bin/kubectl' ]; then
   source <(kubectl completion zsh)
@@ -161,3 +168,11 @@ if type brew &>/dev/null; then
   FPATH=${HOMEBREW_ROOT}/share/zsh/site-functions:$FPATH
 fi
 export KERL_CONFIGURE_OPTIONS="--disable-hipe --with-wx-config=$(brew --prefix wxwidgets)/bin/wx-config --with-odbc=$(brew --prefix unixodbc)"
+#export KERL_CONFIGURE_OPTIONS="--disable-jit --with-ssl=$(brew --prefix openssl)"
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/hazen/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+eval "$(mise activate zsh)"
