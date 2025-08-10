@@ -156,8 +156,8 @@ if [ -f "$HOME/.zsh_prompt" ]; then
 fi
 
 # asdf Version Manager
-#export ASDF_DATA_DIR="$HOME/.asdf"
-#export PATH="$ASDF_DATA_DIR/shims:$PATH"
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin":$PATH
 
 if [ -f '${HOMEBREW_ROOT}/bin/kubectl' ]; then
@@ -175,4 +175,4 @@ fpath=(/Users/hazen/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
-eval "$(mise activate zsh)"
+#eval "$(mise activate zsh)"
